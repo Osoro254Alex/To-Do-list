@@ -2,7 +2,7 @@ import './style.css';
 
 const list = [
   {
-    description: 'watching tutorials',
+    description: 'watching tutorial',
     completed: false,
     index: 0,
   },
@@ -28,14 +28,15 @@ const list = [
 
 const loadList = () => {
   const listCont = document.querySelector('.list-cont');
-
-  list.forEach((obj) => {
-    listCont.innerHTML += `
-<li id="${obj.index}" >
-  <input class="check" type="checkbox">
-  ${obj.description}
-  <i class="fa-solid fa-ellipsis-vertical"></i>
-</li>`;
+  list.forEach((obj, index) => {
+    if (obj.index === index) {
+      listCont.innerHTML += `
+      <li>
+        <input class="check" type="checkbox">
+        ${obj.description}
+        <i class="fa-solid fa-ellipsis-vertical"></i>
+      </li>`;
+    }
   });
 };
 
