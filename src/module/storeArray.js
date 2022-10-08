@@ -1,6 +1,3 @@
-const storeArray = (arr) => {
-  const arrToLoad = localStorage.setItem('arraylist', JSON.stringify(arr));
-  return arrToLoad;
-};
+const storeArray = (arr) => localStorage.setItem('arraylist', JSON.stringify(arr));
 
 export default (storeArray);
