@@ -2,9 +2,9 @@
 
 # Project: To-Do-list
 
-Project 1: List structure.
-Project 2: Interactive list.
-Project 3: Add and remove items.
+- Project 1: List structure.
+- Project 2: Interactive list.
+- Project 3: Add and remove items.
 
 ## In this milestone of my To Do list, I will:
 
