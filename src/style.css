@@ -41,18 +41,25 @@ h1 {
 }
 
 .main-input {
+  flex: 1;
   font-style: italic;
-  width: 100%;
   font-size: 0.9rem;
+  outline: none;
   border: none;
-  border-top: 1px solid #dad6d6;
+  padding: 0.7rem 1rem;
+}
+
+.main-inputs {
+  font-size: 0.9rem;
+  outline: none;
+  border: none;
   padding: 0.7rem 1rem;
 }
 
 li {
   width: 100%;
   border-top: 1px solid #dad6d6;
-  padding: 0.9rem 1rem;
+  padding: 0 1rem;
   display: flex;
   align-items: center;
   font-size: 1rem;
@@ -63,6 +70,11 @@ li {
 
 .check {
   cursor: pointer;
+}
+
+.icon {
+  flex: 1;
+  text-align: end;
 }
 
 i {
@@ -83,4 +95,30 @@ i {
   padding: 0.7rem 1rem;
   color: #7c7c7c;
   font-weight: 500;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.btn-input {
+  font-size: 0.9rem;
+  border: none;
+  width: fit-content;
+  margin-right: 1rem;
+  background-color: #fff;
+}
+
+.active {
+  text-decoration: line-through;
+}
+
+.firtive {
+  display: none;
+}
+
+.sective {
+  display: none;
 }
