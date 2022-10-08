@@ -2,13 +2,22 @@
 
 # Project: To-Do-list
 
+Project 1: List structure.
+Project 2: Interactive list.
+Project 3: Add and remove items.
+
 ## In this milestone of my To Do list, I will:
 
 > In this project, I will build a simple HTML list of To Do tasks. The list will be styled according to the specifications listed later in this lesson. This simple web page will be built using webpack and served by a webpack dev server.
+> Adding a new item.
+> Removing a selected item.
+> Marking a selected item as complete.
+> Removing all items marked as complete at once.
+> Reordering a selected item (as drag-and-drop) [as an additional feature].
 
 ## Link to the live page
 
-> Feel free to check the [To-Do-list-link]().
+> Feel free to check the [To-Do-list-link](https://osoro254alex.github.io/To-Do-list/).
 
 ## Prerequisites
 - A working browser application (Google chrome, Mozilla Fire fox, Microsoft edge ...)
