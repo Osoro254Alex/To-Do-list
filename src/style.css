@@ -100,6 +100,15 @@ i {
 .form {
   width: 100%;
   display: flex;
+  align-items: center;
+}
+
+.btn-input {
+  font-size: 0.9rem;
+  border: none;
+  width: fit-content;
+  margin-right: 1rem;
+  background-color: #fff;
 }
 
 .active {
