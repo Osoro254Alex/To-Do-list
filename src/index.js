@@ -16,7 +16,7 @@ const objCreater = () => {
   const listObj = {};
   listObj.description = mainInput.value;
   listObj.completed = false;
-  listObj.index = list.length;
+  listObj.index = list.length + 1;
   mainInput.value = '';
   return listObj;
 };
@@ -172,6 +172,7 @@ bigCont.addEventListener('click', (e) => {
 const deleAll = () => {
   btnLast.addEventListener('click', (e) => {
     e.preventDefault();
+
     for (let k = 0; k < (listCont.children).length; k += 1) {
       if ((listCont.children)[k].children[0].checked) {
         (listCont.children)[k].children[0].parentElement.remove();
