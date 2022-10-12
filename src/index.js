@@ -9,6 +9,7 @@ const listCont = document.querySelector('.list-cont');
 const mainInput = document.querySelector('.main-input');
 const btnLast = document.querySelector('.btn-last');
 const bigCont = document.querySelector('.container');
+const adder = document.querySelector('.pluzz');
 
 // creates object
 const objCreater = () => {
@@ -41,6 +42,20 @@ bigCont.addEventListener('keypress', (e) => {
       });
       localStorage.setItem('arraylist', JSON.stringify(list));
     }
+  }
+});
+
+// button Add
+
+adder.addEventListener('click', (e) => {
+  if (mainInput.value !== '') {
+    const objects = objCreater();
+    loadList(objects); // loading element call
+    list.push(objects); // adding to array
+    list.sort((a, b) => a.index - b.index); // sorting arr
+    storeArray(list); // store to localstorage
+    getLocalStore(); // retrieve from localstorge
+    e.preventDefault();
   }
 });
 
@@ -78,7 +93,6 @@ bigCont.addEventListener('click', (e) => {
     if (cheyk.checked) {
       para.classList.toggle('active');
       // Flags Completed Property as true
-
       if (list.length > 0) {
         list.forEach((item) => {
           if (item.index === Number(spotCheck)) {

@@ -41,7 +41,7 @@ h1 {
 }
 
 .main-input {
-  flex: 1;
+  width: 95%;
   font-style: italic;
   font-size: 0.9rem;
   outline: none;
@@ -50,6 +50,7 @@ h1 {
 }
 
 .main-inputs {
+  width: 80%;
   font-size: 0.9rem;
   outline: none;
   border: none;
@@ -98,6 +99,7 @@ i {
 }
 
 .form {
+  padding-right: 2px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -107,8 +109,14 @@ i {
   font-size: 0.9rem;
   border: none;
   width: fit-content;
-  margin-right: 1rem;
-  background-color: #fff;
+  background-color: #5af15a;
+  border-radius: 10px;
+}
+
+.pluzz {
+  color: #fff;
+  font-size: 1rem;
+  padding: 0.7rem 0.7rem;
 }
 
 .active {
