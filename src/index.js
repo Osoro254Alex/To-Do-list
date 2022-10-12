@@ -11,7 +11,7 @@ const btnLast = document.querySelector('.btn-last');
 const bigCont = document.querySelector('.container');
 const adder = document.querySelector('.pluzz');
 
-// creates object
+// object
 const objCreater = () => {
   const listObj = {};
   listObj.description = mainInput.value;
