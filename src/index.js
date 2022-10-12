@@ -67,20 +67,14 @@ localStorage.setItem('arraylist', JSON.stringify(gotted));
 const onLoader = () => {
   if (getLocalStore() !== undefined) {
     getLocalStore().forEach((elem) => {
-      listCont.innerHTML += `
-        <li class="list-items">
-          <input class="check" type="checkbox">
-          <input class="main-inputs" value = "${elem.description}" />
-          <div class="icon">
-            <i class="fa-solid fa-ellipsis-vertical"></i>
-            <i id="${elem.index}" class="sective fa-solid fa-trash-can"></i>
-          </div>
-        </li>`;
+      loadList(elem)
     });
   }
 };
 
 onLoader();
+
+
 
 bigCont.addEventListener('click', (e) => {
 // toggle on the LineThrough
@@ -91,7 +85,8 @@ bigCont.addEventListener('click', (e) => {
     const spotCheck = e.target.parentElement.children[2].children[1].id;
 
     if (cheyk.checked) {
-      para.classList.toggle('active');
+      para.classList.add('active');
+      cheyk.checked = true
       // Flags Completed Property as true
       if (list.length > 0) {
         list.forEach((item) => {
@@ -109,7 +104,8 @@ bigCont.addEventListener('click', (e) => {
         localStorage.setItem('arraylist', JSON.stringify(gotted));
       }
     } else {
-      para.classList.toggle('active');
+      para.classList.remove('active');
+      cheyk.checked = false
       // Flags Completed Property as false
       if (list.length > 0) {
         list.forEach((item) => {
@@ -167,6 +163,10 @@ bigCont.addEventListener('click', (e) => {
   }
 });
 
+// Update
+
+
+
 // Clears All Checked element By Using flag Completed true
 
 const deleAll = () => {
@@ -178,20 +178,23 @@ const deleAll = () => {
         (listCont.children)[k].children[0].parentElement.remove();
       }
 
+      const update = (arrr) =>{
+        const indee = arrr.indexOf(arrr[k]);
+        arrr.splice(indee, 1);
+        localStorage.setItem('arraylist', JSON.stringify(arrr));
+      }
+
       if (list.length > 0) {
         if (list[k].completed === true) {
-          const indee = list.indexOf(list[k]);
-          list.splice(indee, 1);
-          localStorage.setItem('arraylist', JSON.stringify(list));
+          update(list)
         }
-      } else if (gotted[k].completed === true) {
-        const indee = gotted.indexOf(gotted[k]);
-        gotted.splice(indee, 1);
-        localStorage.setItem('arraylist', JSON.stringify(gotted));
-      }
+      }else if (gotted[k].completed === true) {
+      update(gotted)
+       }
     }
   });
 };
 
 // function ClearAll
 deleAll();
+
