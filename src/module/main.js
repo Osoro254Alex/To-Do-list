@@ -1,9 +1,8 @@
-import './style.css';
-import loadList from './module/loadList.js';
-import storeArray from './module/storeArray.js';
-import getLocalStore from './module/fromlocalstore.js';
+import loadList from './loadList.js';
+import storeArray from './storeArray.js';
+import getLocalStore from './fromlocalstore.js';
 import Item from './test/add';
-import list from './module/initial';
+import list from './initial';
 
 const listCont = document.querySelector('.list-cont');
 const mainInput = document.querySelector('.main-input');
@@ -48,6 +47,8 @@ export const loadWeb = () =>{
       list.push(newItem); // adding to array
       storeArray(list); // store to localstorage
       mainInput.value = '';
+      console.log(list.pop())
+      return list
     }
 }
 
