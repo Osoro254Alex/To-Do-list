@@ -11,4 +11,13 @@ describe('Test for Task Edit, Update, and Clear Complete Status', () => {
   test('Test for Clear All Completed Tasks', () => {
     expect(statusClear.clearingTask(mockElem).length).toBe(1);
   });
+   test('Test for Edit Task', () => {
+    expect(edit1.edit()).toEqual(mockElem[0]);
+    expect(edit2.edit()).toEqual(mockElem[1]);
+  });
+
+  test('Test for Update Complete Task status', () => {
+    expect(statusUpdateFirst.statusUpdate()).toEqual(mockElem[0].completed);
+    expect(statusUpdateSec.statusUpdate()).toEqual(mockElem[2].completed);
+  });
 });
