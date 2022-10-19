@@ -124,7 +124,7 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \*******************************/
 /***/ ((module) => {
 
-eval("const mockElem = [\n  {\n    description: 'Elem1',\n    index: 1,\n    completed: false,\n  },\n  {\n    description: 'Elem2',\n    index: 1,\n    completed: false,\n  },\n  {\n    description: 'Elem3',\n    index: 1,\n    completed: false,\n  },\n];\n\nmodule.exports = mockElem;\n\n//# sourceURL=webpack://to-do-list/./src/__mock__/store.js?");
+eval("const mockElem = [\n  {\n    description: 'Elem1',\n    index: 1,\n    completed: false,\n  },\n\n  {\n    description: 'Elem2',\n    index: 2,\n    completed: false,\n  },\n\n  {\n    description: 'Elem3',\n    index: 3,\n    completed: false,\n  },\n];\n\nmodule.exports = mockElem;\n\n//# sourceURL=webpack://to-do-list/./src/__mock__/store.js?");
 
 /***/ }),
 
