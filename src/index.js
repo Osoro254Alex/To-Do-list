@@ -2,8 +2,7 @@ import './style.css';
 import loadList from './module/loadList.js';
 import storeArray from './module/storeArray.js';
 import getLocalStore from './module/fromlocalstore.js';
-import Item from './test/add';
-import list from './module/initial';
+import Item from './test/addandremove.js';
 
 const listCont = document.querySelector('.list-cont');
 const mainInput = document.querySelector('.main-input');
@@ -13,12 +12,12 @@ const adder = document.querySelector('.pluzz');
 
 // creates object
 
-
+const list = [];
 
 bigCont.addEventListener('keypress', (e) => {
   if (e.key === 'Enter') {
     if (mainInput.value !== '') {
-      const newItem = new Item(mainInput.value, false, list.length + 1)
+      const newItem = new Item(mainInput.value, list.length + 1, false);
       loadList(newItem); // loading element call
       list.push(newItem); // adding to array
       list.sort((a, b) => a.index - b.index); // sorting array
@@ -41,19 +40,19 @@ bigCont.addEventListener('keypress', (e) => {
 });
 
 // button Add
-export const loadWeb = () =>{
-    if (mainInput.value !== '') {
-      const newItem = new Item(mainInput.value, false, list.length + 1)
-      loadList(newItem); 
-      list.push(newItem); // adding to array
-      storeArray(list); // store to localstorage
-      mainInput.value = '';
-    }
-}
+const loadWeb = () => {
+  if (mainInput.value !== '') {
+    const newItem = new Item(mainInput.value, list.length + 1, false);
+    loadList(newItem);
+    list.push(newItem); // adding to array
+    storeArray(list); // store to localstorage
+    mainInput.value = '';
+  }
+};
 
 adder.addEventListener('click', (e) => {
   if (mainInput.value !== '') {
-    loadWeb ()
+    loadWeb();
     list.sort((a, b) => a.index - b.index); // sorting arr
     getLocalStore(); // retrieve from localstorge
     e.preventDefault();
@@ -135,11 +134,7 @@ bigCont.addEventListener('click', (e) => {
     deletPare.style.backgroundColor = '#dfdf7c';
     inn.style.backgroundColor = '#dfdf7c';
   }
-
-
 });
-
-
 
 bigCont.addEventListener('click', (e) => {
   //  remove from website and localstorage
@@ -166,9 +161,7 @@ bigCont.addEventListener('click', (e) => {
       localStorage.setItem('arraylist', JSON.stringify(gotted));
     }
   }
-
 });
-
 
 // Clears All Checked element By Using flag Completed true
 
