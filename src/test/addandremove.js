@@ -25,6 +25,31 @@ class Item {
     mockElem.splice(index, 1);
     return mockElem;
   }
+
+  clearingTask() {
+    let task = {
+      description: this.description,
+      completed: this.completed,
+      index: this.index,
+    };
+    const clearTask = (items) => items.filter((task) => !task.completed);
+    task = clearTask;
+    return task;
+  }
+
+  edit() {
+    mockElem[this.index].description = this.completed;
+    return mockElem[this.index];
+  }
+
+  statusUpdate() {
+    if (mockElem[0].completed === this.completed) {
+      mockElem[0].completed = true;
+    } else if (mockElem[0].completed) {
+      mockElem[0].completed = this.completed;
+    }
+    return mockElem[0].completed;
+  }
 }
 
 export default Item;
