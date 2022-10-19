@@ -9,3 +9,10 @@ describe('Test for Task Addition', () => {
     expect(Item.addTask(testItems2.getItem()).length).toBe(mockElem.length);
   });
 });
+
+describe('Test for Task Deletion', () => {
+  test('delete items to list', () => {
+    expect(Item.deleteTask(0).length).toBe(mockElem.length);
+    expect(Item.deleteTask(1).length).toBe(mockElem.length);
+  });
+});
